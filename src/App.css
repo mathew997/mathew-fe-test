@@ -1,0 +1,118 @@
+[data-hero] {
+  background-image: url(assets/hero-bg.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+[data-match-card]::before {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  inset: 0;
+  background-color: oklch(from var(--color-brand) l c h / 90%);
+  transform: scaleY(0);
+  transform-origin: bottom;
+  transition: transform 0.5s ease-in-out;
+  z-index: 0;
+}
+
+[data-match-card]:hover::before {
+  transform: scaleY(1);
+}
+
+[data-match-card]::after {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 50%;
+  top: -40%;
+  left: 50%;
+  transform: translate(-50%, 0);
+  background-image: url(assets/match-card-bg.svg);
+  background-repeat: no-repeat;
+}
+
+/* about section starts here */
+[data-we-are] {
+  margin-left: auto;
+  [data-title] {
+    -webkit-text-stroke: 1px #fff !important;
+  }
+  [data-subtitle] {
+    color: #fff;
+  }
+}
+[data-gradient] {
+  position: relative;
+  background-image: url(assets/what-we-are-bg.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+[data-gradient]::before {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  inset: 0;
+  z-index: 0;
+  background: linear-gradient(92.06deg, #5d276ecc 31.99%, #3f627a98 98.62%);
+}
+
+[data-rule] {
+  position: relative;
+  background-image: url(assets/rules-bg.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+[data-rule]::before {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  inset: 0;
+  z-index: 0;
+  background: linear-gradient(
+    92.2deg,
+    #42717e94 21.45%,
+    rgba(63, 98, 122, 0) 98.53%
+  );
+}
+
+[data-ranking] {
+  background-image: url(assets/rank-bg.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+[data-footer-top]::after {
+  position: absolute;
+  content: "";
+  height: 1px;
+  width: 100%;
+  background-color: #6d5f7d;
+  bottom: 0;
+  left: 0;
+}
+
+[data-ticket]::before {
+  content: "";
+  --size: 18px;
+  position: absolute;
+  height: var(--size);
+  width: var(--size);
+  left: calc(var(--size) / 2 * -1);
+  background-color: var(--ticket-cut-clr, #2f1a45);
+  border-radius: 50%;
+}
+
+[data-ticket]::after {
+  content: "";
+  --size: 18px;
+  position: absolute;
+  height: var(--size);
+  width: var(--size);
+  right: calc(var(--size) / 2 * -1);
+  background-color: var(--ticket-cut-clr, #2f1a45);
+  border-radius: 50%;
+}

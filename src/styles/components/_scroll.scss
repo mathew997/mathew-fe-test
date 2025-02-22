@@ -1,0 +1,30 @@
+.scroll {
+    list-style: none;
+    gap: 0;
+    padding: .5rem 0;
+
+    li {
+        flex: 1;
+        --dur: calc(var(--duration) * 1s);
+        --delay: calc((var(--dur) / var(--count)) * (var(--index, 0) - (var(--count) * 0.5)));
+        --del: calc(var(--delay) - (var(--count) * 0.5s));
+        --origin: calc((var(--count) - var(--index) + var(--spacing, 0)) * 100%);
+        --destination: calc((var(--index) + 1) * -100%);
+        transform: translateX(var(--origin));
+        animation: scroll var(--dur) calc(var(--delay) - (var(--count) * 0.5s)) infinite linear;
+
+        @keyframes scroll {
+            100% {
+                transform: translateX(var(--destination));
+            }
+        }
+
+        span:has(svg) {
+            margin-right: .5rem;
+        }
+    }
+}
+
+[data-reverse="true"] * {
+    animation-direction: reverse !important;
+}

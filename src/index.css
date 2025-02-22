@@ -1,0 +1,11 @@
+@import "tailwindcss";
+
+:root {
+  --font-brand: "ClanOT-NarrowBook", sans-serif;
+  @theme {
+    --color-brand: #2f1a45;
+    --font-brand-bold: "ClanOT-NarrowBold", sans-serif;
+  }
+
+  font-family: var(--font-brand);
+}
